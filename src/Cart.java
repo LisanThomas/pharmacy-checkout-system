@@ -17,13 +17,13 @@ public class Cart {
 
     public void displayCart() {
         if (items.isEmpty()) {
-            System.out.println("Your cart is empty.");
+            System.out.println("\nYour cart is empty.");
             return;
         }
 
-        System.out.println("Items in your cart: ");
+        System.out.println("\nItems in your cart: ");
         for (Item item: items) {
-            System.out.println("- " + item.getName() + " ($" + item.getPrice() + ")");
+            System.out.println("- " + item.getName() + String.format("%.2f", item.getPrice()));
         }
     }
 

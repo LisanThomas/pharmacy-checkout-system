@@ -2,6 +2,7 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
+        // Predefined pharmacy items
         ArrayList<Item> items = new ArrayList<>();
 
         items.add(new Item("Paracetamol", 5.50));
@@ -13,7 +14,21 @@ public class Main {
 
         for (int i = 0; i < items.size(); i++) {
             Item item = items.get(i);
-            System.out.println((i+1) + ". " + item.getName() + " - $" + item.getPrice());
+            System.out.println((i+1) + ". " + item.getName() + " - $" + String.format("%.2f", item.getPrice()));
         }
+
+        // Create a cart
+        Cart cart = new Cart();
+
+        // Adding items to the cart
+        // cart.addItems(items.get(0));
+        // cart.addItems(items.get(3));
+
+        // Display cart contents
+        cart.displayCart();
+
+        // Calculate total price
+        double total = cart.calculatePrice();
+        System.out.println("Total price: $" + String.format("%.2f", total));
     }
 }
